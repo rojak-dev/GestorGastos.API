@@ -1,0 +1,45 @@
+# ── IDE / SO ───────────────────────────────────────
+.vs/
+.vscode/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ── Build .NET ─────────────────────────────────────
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+*.pdb
+*.cache
+*.dbmdl
+*.log
+*.tmp
+*.svclog
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.csproj.user
+*.tsbuildinfo
+
+# ── Publicaciones ──────────────────────────────────
+publish/
+dist/
+
+# ── Config locales / secretos ──────────────────────
+.env
+.env.*
+**/secrets.json
+**/appsettings.*.local.json
+# (Opcional) si tu equipo prefiere no versionarlo:
+# **/Properties/launchSettings.json
+
+# ── Certificados / claves ──────────────────────────
+*.pfx
+*.p12
+*.snk
+*.keystore
