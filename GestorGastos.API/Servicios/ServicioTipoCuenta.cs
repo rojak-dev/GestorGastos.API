@@ -10,9 +10,12 @@ namespace GestorGastos.API.Servicios
     {
         private readonly string CadenaConexion;
 
-        public ServicioTipoCuenta(ConexionBaseDatos con)
+        private readonly ILogger<ServicioTipoCuenta> Log;
+
+        public ServicioTipoCuenta(ConexionBaseDatos con, ILogger<ServicioTipoCuenta> log)
         {
             CadenaConexion = con.CadenaConexionSQL;
+            Log = log;
         }
 
         private SqlConnection conexion()
@@ -36,6 +39,7 @@ namespace GestorGastos.API.Servicios
             }
             catch (Exception ex)
             {
+                Log.LogError("ERROR: "+ex.ToString());
                 throw new Exception("Se produjo un error al borrar el tipo cuenta" + ex.Message);
             }
             finally
@@ -60,6 +64,7 @@ namespace GestorGastos.API.Servicios
             }
             catch (Exception ex)
             {
+                Log.LogError("ERROR: "+ex.ToString());
                 throw new Exception("Se produjo un erro al consultar los tipos cuentas" + ex.Message);
             }
             finally
@@ -83,13 +88,11 @@ namespace GestorGastos.API.Servicios
 
 
                 tipoc = await sqlConection.QueryFirstOrDefaultAsync<TipoCuenta>("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
-                if (tipoc != null)
-                    return tipoc;
-                else
-                    return null;
+                return tipoc;
             }
             catch (Exception ex)
             {
+                Log.LogError("ERROR: " + ex.ToString());
                 throw new Exception("Se produjo un error al buscar el tipoCuenta" + ex.Message);
             }
             finally
@@ -115,6 +118,7 @@ namespace GestorGastos.API.Servicios
             }
             catch (Exception ex)
             {
+                Log.LogError("ERROR: " + ex.ToString());
                 throw new Exception("Se produjo un error al modificar tipo cuenta" + ex.Message);
             }
             finally
@@ -140,6 +144,7 @@ namespace GestorGastos.API.Servicios
             }
             catch (Exception ex)
             {
+                Log.LogError("ERROR: " + ex.ToString());
                 throw new Exception("Se produjo un erro al dar de alta" + ex.Message);
             }
             finally {

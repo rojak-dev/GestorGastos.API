@@ -1,5 +1,6 @@
 using GestorGastos.API;
 using GestorGastos.API.Servicios;
+using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IServicioTipoCuenta, ServicioTipoCuenta>(); //servicio TipoCuenta
+
+builder.Host.ConfigureLogging((hostingContext, logging) =>  //Servicio de Log
+{
+    logging.AddNLog();
+});
 
 //configuracion CORS
 var origenesPermitidos = config.GetValue<string>("origenesPermitidos")!.Split(',');
