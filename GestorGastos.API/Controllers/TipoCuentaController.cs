@@ -19,16 +19,16 @@ namespace GestorGastos.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<TipoCuentaDTO> Get()
+        public async Task<IEnumerable<TipoCuentaDTO>> Get()
         {
-            var list = servicioTipoCuenta.getAllTiposCeuntas().Select(e => e.convertirDTO());
+            var list = (await servicioTipoCuenta.getAllTiposCeuntas()).Select(e => e.convertirDTO());
             return list;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<TipoCuentaDTO> Get(int id)
+        public async Task<ActionResult<TipoCuentaDTO>> Get(int id)
         {
-            var tipoCuenta = servicioTipoCuenta.getTipoCuentaById(id).convertirDTO();
+            var tipoCuenta = (await servicioTipoCuenta.getTipoCuentaById(id)).convertirDTO();
             if (tipoCuenta is null)
             {
                 return NotFound("Tipo cuenta no encontrada"); //404 recurso no encontrado
@@ -38,31 +38,31 @@ namespace GestorGastos.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<TipoCuenta> post(TipoCuenta t)
+        public async Task<ActionResult<TipoCuenta>> post(TipoCuenta t)
         {
-            servicioTipoCuenta.NuevoTipoCuenta(t);
+            await servicioTipoCuenta.NuevoTipoCuenta(t);
             return Ok();
         }
 
         [HttpPut]
-        public ActionResult<TipoCuenta> put(TipoCuenta t)
+        public async Task<ActionResult<TipoCuenta>> put(TipoCuenta t)
         {
-            var tipoAux = servicioTipoCuenta.getTipoCuentaById(t.Id);
+            var tipoAux =  await servicioTipoCuenta.getTipoCuentaById(t.Id);
             if (tipoAux is null) return NotFound();
 
             tipoAux.Nombre = t.Nombre;
 
-            servicioTipoCuenta.ModificarTipoCuenta(tipoAux);
+            await servicioTipoCuenta.ModificarTipoCuenta(tipoAux);
             return Ok();
         }
 
         [HttpDelete]
-        public ActionResult delete(int id)
+        public async Task<ActionResult> delete(int id)
         {
-            var tipoAux = servicioTipoCuenta.getTipoCuentaById(id);
+            var tipoAux = await servicioTipoCuenta.getTipoCuentaById(id);
             if (tipoAux is null) return NotFound();
 
-            servicioTipoCuenta.BajaTipoCuenta(tipoAux.Id);
+            await servicioTipoCuenta.BajaTipoCuenta(tipoAux.Id);
             return Ok();
         }
 

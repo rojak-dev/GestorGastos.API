@@ -19,7 +19,7 @@ namespace GestorGastos.API.Servicios
         {
             return new SqlConnection(CadenaConexion);
         }
-        public void BajaTipoCuenta(int id)
+        public async Task BajaTipoCuenta(int id)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -31,7 +31,7 @@ namespace GestorGastos.API.Servicios
                 param.Add("@Id", id, DbType.Int32, ParameterDirection.Input, 50);
 
 
-                sqlConection.ExecuteScalar("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                await sqlConection.ExecuteScalarAsync("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
            
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public IEnumerable<TipoCuenta> getAllTiposCeuntas()
+        public async Task<IEnumerable<TipoCuenta>> getAllTiposCeuntas()
         {
             SqlConnection sqlConection = conexion();
             List<TipoCuenta> tiposcuentas = new List<TipoCuenta>();
@@ -55,7 +55,7 @@ namespace GestorGastos.API.Servicios
 
 
 
-               var r = sqlConection.Query<TipoCuenta>("sp_name", commandType: CommandType.StoredProcedure); //ejecutamos el SP
+               var r = await sqlConection.QueryAsync<TipoCuenta>("sp_name", commandType: CommandType.StoredProcedure); //ejecutamos el SP
                return r;
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public TipoCuenta getTipoCuentaById(int id)
+        public async Task<TipoCuenta> getTipoCuentaById(int id)
         {
             SqlConnection sqlConection = conexion();
             TipoCuenta tipoc = null;
@@ -82,7 +82,7 @@ namespace GestorGastos.API.Servicios
                 param.Add("@Id", id, DbType.Int32, ParameterDirection.Input, 50);
 
 
-                tipoc = sqlConection.QueryFirstOrDefault<TipoCuenta>("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                tipoc = await sqlConection.QueryFirstOrDefaultAsync<TipoCuenta>("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
                 if (tipoc != null)
                     return tipoc;
                 else
@@ -99,7 +99,7 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public void ModificarTipoCuenta(TipoCuenta t)
+        public async Task ModificarTipoCuenta(TipoCuenta t)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -111,7 +111,7 @@ namespace GestorGastos.API.Servicios
                 param.Add("@Nombre", t.Nombre, DbType.String, ParameterDirection.Input, 50);
 
 
-                sqlConection.ExecuteScalar("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                await sqlConection.ExecuteScalarAsync("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public void NuevoTipoCuenta(TipoCuenta t)
+        public async Task NuevoTipoCuenta(TipoCuenta t)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -136,7 +136,7 @@ namespace GestorGastos.API.Servicios
                 param.Add("@Nombre", t.Nombre, DbType.String, ParameterDirection.Input, 50);
 
 
-                sqlConection.ExecuteScalar("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                await sqlConection.ExecuteScalarAsync("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
             }
             catch (Exception ex)
             {

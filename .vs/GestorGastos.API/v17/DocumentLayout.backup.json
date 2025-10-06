@@ -15,16 +15,16 @@
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\servicios\\iserviciotipocuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\conexionbasedatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\conexionbasedatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\entidades\\tipocuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\entidades\\tipocuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\conexionbasedatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\conexionbasedatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\gestorgastos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Utilidades.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Utilidades.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Utilidades.cs",
@@ -50,18 +50,17 @@
               "RelativeToolTip": "GestorGastos.API\\Utilidades.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T19:59:23.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T19:59:23.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "ConexionBaseDatos.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\ConexionBaseDatos.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\ConexionBaseDatos.cs",
               "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\ConexionBaseDatos.cs",
               "RelativeToolTip": "GestorGastos.API\\ConexionBaseDatos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-06T19:08:46.277Z",
               "EditorCaption": ""
@@ -74,7 +73,7 @@
               "RelativeDocumentMoniker": "GestorGastos.API\\Servicios\\ServicioTipoCuenta.cs",
               "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Servicios\\ServicioTipoCuenta.cs",
               "RelativeToolTip": "GestorGastos.API\\Servicios\\ServicioTipoCuenta.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAuwCYAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAiwIoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-06T18:59:56.727Z",
               "EditorCaption": ""
@@ -87,7 +86,7 @@
               "RelativeDocumentMoniker": "GestorGastos.API\\Servicios\\IServicioTipoCuenta.cs",
               "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Servicios\\IServicioTipoCuenta.cs",
               "RelativeToolTip": "GestorGastos.API\\Servicios\\IServicioTipoCuenta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-06T18:55:04.711Z",
               "EditorCaption": ""
@@ -95,15 +94,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GestorGastos.API",
+              "Title": "GestorGastos.API.csproj",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\GestorGastos.API.csproj",
               "RelativeDocumentMoniker": "GestorGastos.API\\GestorGastos.API.csproj",
               "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\GestorGastos.API.csproj",
               "RelativeToolTip": "GestorGastos.API\\GestorGastos.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-06T18:53:06.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T18:53:06.79Z"
             },
             {
               "$type": "Document",
@@ -111,16 +109,16 @@
               "Title": "TipoCuentaController.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "RelativeToolTip": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwEEAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs*",
+              "RelativeToolTip": "GestorGastos.API\\Controllers\\TipoCuentaController.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwEAAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T06:53:17.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TipoCuenta.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Entidades\\TipoCuenta.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Entidades\\TipoCuenta.cs",
@@ -128,8 +126,7 @@
               "RelativeToolTip": "GestorGastos.API\\Entidades\\TipoCuenta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T06:47:14.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T06:47:14.885Z"
             }
           ]
         }

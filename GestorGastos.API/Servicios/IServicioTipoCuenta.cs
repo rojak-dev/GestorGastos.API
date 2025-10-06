@@ -5,10 +5,10 @@ namespace GestorGastos.API.Servicios
 {
     public interface IServicioTipoCuenta
     {
-        public IEnumerable<TipoCuenta> getAllTiposCeuntas();
-        public TipoCuenta getTipoCuentaById(int id);
-        public void NuevoTipoCuenta(TipoCuenta t);
-        public void ModificarTipoCuenta(TipoCuenta t);
-        public void BajaTipoCuenta(int id);
+        public Task<IEnumerable<TipoCuenta>> getAllTiposCeuntas();
+        public Task<TipoCuenta> getTipoCuentaById(int id);
+        public Task NuevoTipoCuenta(TipoCuenta t);
+        public Task ModificarTipoCuenta(TipoCuenta t);
+        public Task BajaTipoCuenta(int id);
     }
 }
