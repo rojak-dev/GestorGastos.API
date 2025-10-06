@@ -1,6 +1,13 @@
+using GestorGastos.API;
+using GestorGastos.API.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var config = builder.Configuration;
+
+var cadenaConexionSql = new ConexionBaseDatos(config.GetConnectionString("SQL")); //obtenemos la cadena de conexion con nuestra clase personalizada
+builder.Services.AddSingleton(cadenaConexionSql);
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -9,8 +16,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<IServicioTipoCuenta, ServicioTipoCuenta>(); //servicio TipoCuenta
+
 //configuracion CORS
-var origenesPermitidos = builder.Configuration.GetValue<string>("origenesPermitidos")!.Split(',');
+var origenesPermitidos = config.GetValue<string>("origenesPermitidos")!.Split(',');
 builder.Services.AddCors(opciones =>
 {
     opciones.AddDefaultPolicy(opcionesCORS =>
