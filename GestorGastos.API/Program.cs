@@ -9,6 +9,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//configuracion CORS
+var origenesPermitidos = builder.Configuration.GetValue<string>("origenesPermitidos")!.Split(',');
+builder.Services.AddCors(opciones =>
+{
+    opciones.AddDefaultPolicy(opcionesCORS =>
+    {
+        opcionesCORS.WithOrigins(origenesPermitidos).AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +30,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 

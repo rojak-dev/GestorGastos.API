@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Code\\GestorGastos.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\controllers\\tipocuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\controllers\\tipocuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\entidades\\tipocuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\entidades\\tipocuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos.api\\gestorgastos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Program.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Program.cs",
               "ToolTip": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Program.cs",
               "RelativeToolTip": "GestorGastos.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T07:27:21.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TipoCuentaController.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
@@ -52,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TipoCuenta.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\Entidades\\TipoCuenta.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Entidades\\TipoCuenta.cs",
@@ -60,8 +60,7 @@
               "RelativeToolTip": "GestorGastos.API\\Entidades\\TipoCuenta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T06:47:14.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T06:47:14.885Z"
             }
           ]
         }

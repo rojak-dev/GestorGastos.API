@@ -30,3 +30,4 @@ C:\Code\GestorGastos.API\GestorGastos.API\obj\Debug\net9.0\refint\GestorGastos.A
 C:\Code\GestorGastos.API\GestorGastos.API\obj\Debug\net9.0\GestorGastos.API.pdb
 C:\Code\GestorGastos.API\GestorGastos.API\obj\Debug\net9.0\GestorGastos.API.genruntimeconfig.cache
 C:\Code\GestorGastos.API\GestorGastos.API\obj\Debug\net9.0\ref\GestorGastos.API.dll
+C:\Code\GestorGastos.API\GestorGastos.API\obj\Debug\net9.0\GestorGastos.API.sourcelink.json
