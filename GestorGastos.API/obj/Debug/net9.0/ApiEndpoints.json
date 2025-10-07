@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "t",
-        "Type": "GestorGastos.API.Entidades.TipoCuenta",
+        "Type": "GestorGastos.API.DTO.TipoCuentaCreacionDTO",
         "IsRequired": true
       }
     ],
@@ -111,6 +111,7 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "ObtenerTipoCuentaPorId"
   }
 ]

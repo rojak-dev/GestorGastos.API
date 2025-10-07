@@ -50,17 +50,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TipoCuenta"
+                "$ref": "#/components/schemas/TipoCuentaCreacionDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TipoCuenta"
+                "$ref": "#/components/schemas/TipoCuentaCreacionDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TipoCuenta"
+                "$ref": "#/components/schemas/TipoCuentaCreacionDTO"
               }
             }
           }
@@ -160,6 +160,7 @@
         "tags": [
           "TipoCuenta"
         ],
+        "operationId": "ObtenerTipoCuentaPorId",
         "parameters": [
           {
             "name": "id",
@@ -220,12 +221,34 @@
         },
         "additionalProperties": false
       },
+      "TipoCuentaCreacionDTO": {
+        "required": [
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "TipoCuentaDTO": {
         "required": [
           "nombre"
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "nombre": {
             "type": "string",
             "nullable": true

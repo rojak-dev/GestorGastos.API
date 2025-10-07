@@ -1,6 +1,8 @@
 using GestorGastos.API;
 using GestorGastos.API.Servicios;
+using Microsoft.Extensions.DependencyInjection;
 using NLog.Extensions.Logging;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ builder.Services.AddControllers();
 //configuracion de swagger manual
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(cfg => { }, typeof(Program).Assembly); //servicio AutoMapper
 
 builder.Services.AddSingleton<IServicioTipoCuenta, ServicioTipoCuenta>(); //servicio TipoCuenta
 

@@ -1,4 +1,5 @@
-﻿using GestorGastos.API.DTO;
+﻿using AutoMapper;
+using GestorGastos.API.DTO;
 using GestorGastos.API.Entidades;
 using GestorGastos.API.Servicios;
 using Microsoft.AspNetCore.Mvc;
@@ -11,24 +12,28 @@ namespace GestorGastos.API.Controllers
     {
         private readonly IConfiguration configuration;
         private readonly IServicioTipoCuenta servicioTipoCuenta;
+        private readonly IMapper mapper;
 
-        public TipoCuentaController(IConfiguration configuration, IServicioTipoCuenta servicioTipoCuenta)
+        public TipoCuentaController(IConfiguration configuration, IServicioTipoCuenta servicioTipoCuenta, IMapper mapper)
         {
             this.configuration = configuration;
             this.servicioTipoCuenta = servicioTipoCuenta;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IEnumerable<TipoCuentaDTO>> Get()
         {
-            var list = (await servicioTipoCuenta.getAllTiposCeuntas()).Select(e => e.convertirDTO());
-            return list;
+
+            var tipoCuenta = await servicioTipoCuenta.getAllTiposCeuntas();
+            var tipoCeuntaDTO = mapper.Map<List<TipoCuentaDTO>>(tipoCuenta);
+            return tipoCeuntaDTO;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "ObtenerTipoCuentaPorId")]
         public async Task<ActionResult<TipoCuentaDTO>> Get(int id)
         {
-            var tipoCuenta = (await servicioTipoCuenta.getTipoCuentaById(id)).convertirDTO();
+            var tipoCuenta = (await servicioTipoCuenta.getTipoCuentaById(id)).convertirDTO(); //otra forma de convertir a DTO
             if (tipoCuenta is null)
             {
                 return NotFound("Tipo cuenta no encontrada"); //404 recurso no encontrado
@@ -38,10 +43,11 @@ namespace GestorGastos.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TipoCuenta>> post(TipoCuenta t)
+        public async Task<ActionResult<TipoCuenta>> post([FromBody] TipoCuentaCreacionDTO t)
         {
-            await servicioTipoCuenta.NuevoTipoCuenta(t);
-            return Ok();
+            var tipoCuenta = mapper.Map<TipoCuenta>(t);
+            await servicioTipoCuenta.NuevoTipoCuenta(tipoCuenta);
+            return CreatedAtRoute("ObtenerTipoCuentaPorId", new { id = tipoCuenta.Id}, tipoCuenta);
         }
 
         [HttpPut]
