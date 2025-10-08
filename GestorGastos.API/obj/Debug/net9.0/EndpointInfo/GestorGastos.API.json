@@ -10,32 +10,41 @@
         "tags": [
           "TipoCuenta"
         ],
+        "parameters": [
+          {
+            "name": "Pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "RecordsPorPagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TipoCuentaDTO"
-                  }
+                  "$ref": "#/components/schemas/TipoCuentaDTOPagedResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TipoCuentaDTO"
-                  }
+                  "$ref": "#/components/schemas/TipoCuentaDTOPagedResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TipoCuentaDTO"
-                  }
+                  "$ref": "#/components/schemas/TipoCuentaDTOPagedResponse"
                 }
               }
             }
@@ -67,24 +76,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/TipoCuenta"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TipoCuenta"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TipoCuenta"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -96,41 +88,24 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TipoCuenta"
+                "$ref": "#/components/schemas/TipoCuentaCreacionDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TipoCuenta"
+                "$ref": "#/components/schemas/TipoCuentaCreacionDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TipoCuenta"
+                "$ref": "#/components/schemas/TipoCuentaCreacionDTO"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/TipoCuenta"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TipoCuenta"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TipoCuenta"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -199,9 +174,11 @@
   },
   "components": {
     "schemas": {
-      "TipoCuenta": {
+      "TipoCuentaCreacionDTO": {
         "required": [
-          "nombre"
+          "nombre",
+          "orden",
+          "usuarioId"
         ],
         "type": "object",
         "properties": {
@@ -214,23 +191,9 @@
             "minLength": 0,
             "type": "string"
           },
-          "orden": {
+          "usuarioId": {
             "type": "integer",
             "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "TipoCuentaCreacionDTO": {
-        "required": [
-          "nombre"
-        ],
-        "type": "object",
-        "properties": {
-          "nombre": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string"
           },
           "orden": {
             "type": "integer",
@@ -256,6 +219,23 @@
           "orden": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoCuentaDTOPagedResponse": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TipoCuentaDTO"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

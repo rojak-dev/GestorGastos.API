@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using GestorGastos.API.DTO;
 using GestorGastos.API.Entidades;
+using GestorGastos.API.Utilidades;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -22,7 +23,7 @@ namespace GestorGastos.API.Servicios
         {
             return new SqlConnection(CadenaConexion);
         }
-        public async Task BajaTipoCuenta(int id)
+        public async Task DeleteTipoCuenta(int id)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -34,7 +35,7 @@ namespace GestorGastos.API.Servicios
                 param.Add("@Id", id, DbType.Int32, ParameterDirection.Input, 50);
 
 
-                await sqlConection.ExecuteScalarAsync("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                await sqlConection.ExecuteScalarAsync("TipoCuentaEliminar", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
            
             }
             catch (Exception ex)
@@ -49,18 +50,24 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public async Task<IEnumerable<TipoCuenta>> getAllTiposCeuntas()
+        public async Task<PagedResponse<TipoCuenta>> getAllTiposCuentas(PaginacionDTO paginacion)
         {
             SqlConnection sqlConection = conexion();
-            List<TipoCuenta> tiposcuentas = new List<TipoCuenta>();
             try
             {
                 sqlConection.Open();
+                var param = new DynamicParameters();
+                param.Add("Page", paginacion.Pagina);
+                param.Add("PageSize", paginacion.RecordsPorPagina);
+                param.Add("TotalCount", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
 
+                var items = (await sqlConection.QueryAsync<TipoCuenta>("TipoCuentaObtener", param ,commandType: CommandType.StoredProcedure)).AsList(); //ejecutamos el SP
+                var total = param.Get<int>("TotalCount");
 
-               var r = await sqlConection.QueryAsync<TipoCuenta>("sp_name", commandType: CommandType.StoredProcedure); //ejecutamos el SP
-               return r;
+
+                
+                return new PagedResponse<TipoCuenta>(total, items);
             }
             catch (Exception ex)
             {
@@ -87,8 +94,8 @@ namespace GestorGastos.API.Servicios
                 param.Add("@Id", id, DbType.Int32, ParameterDirection.Input, 50);
 
 
-                tipoc = await sqlConection.QueryFirstOrDefaultAsync<TipoCuenta>("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
-                return tipoc;
+                tipoc = await sqlConection.QueryFirstOrDefaultAsync<TipoCuenta>("TipoCuentaPorId", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                
             }
             catch (Exception ex)
             {
@@ -100,9 +107,11 @@ namespace GestorGastos.API.Servicios
                 sqlConection.Close();
                 sqlConection.Dispose();
             }
+
+            return tipoc;
         }
 
-        public async Task ModificarTipoCuenta(TipoCuenta t)
+        public async Task SetTipoCuenta(TipoCuenta t)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -112,9 +121,10 @@ namespace GestorGastos.API.Servicios
                 //Se añaden los parametros
                 var param = new DynamicParameters();
                 param.Add("@Nombre", t.Nombre, DbType.String, ParameterDirection.Input, 50);
+                param.Add("@Orden", t.Orden, DbType.Int32, ParameterDirection.Input);
 
 
-                await sqlConection.ExecuteScalarAsync("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                await sqlConection.ExecuteScalarAsync("TipoCuentaModificar", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
             }
             catch (Exception ex)
             {
@@ -128,7 +138,7 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public async Task NuevoTipoCuenta(TipoCuenta t)
+        public async Task NewTipoCuenta(TipoCuenta t)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -138,9 +148,10 @@ namespace GestorGastos.API.Servicios
                 //Se añaden los parametros
                 var param = new DynamicParameters();
                 param.Add("@Nombre", t.Nombre, DbType.String, ParameterDirection.Input, 50);
+                param.Add("@UsuarioId", t.UsuarioId, DbType.Int32, ParameterDirection.Input);
+                param.Add("@Orden", t.Orden, DbType.Int32, ParameterDirection.Input);
 
-
-                await sqlConection.ExecuteScalarAsync("sp_name", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
+                await sqlConection.ExecuteScalarAsync("TipoCuentaAlta", param, commandType: CommandType.StoredProcedure); //ejecutamos el SP
             }
             catch (Exception ex)
             {
@@ -150,6 +161,33 @@ namespace GestorGastos.API.Servicios
             finally {
                 sqlConection.Close();
                 sqlConection.Dispose();
+            }
+        }
+
+        public async Task<bool> Existe(string nombre, int usuarioId)
+        {
+            SqlConnection conn = conexion();
+            try
+            {
+                conn.Open();
+
+                var param = new DynamicParameters();
+                param.Add("@Nombre", nombre, DbType.String, ParameterDirection.Input, 50);
+                param.Add("@UsuarioId", usuarioId, DbType.Int32, ParameterDirection.Input);
+
+                var temp = await conn.QueryFirstOrDefaultAsync<int>("TipoCuentaExiste", param, commandType: CommandType.StoredProcedure); //estructura del sp: select 1 from TiposCuentas where nombre = @Nombre and usuarioId = @Usiarioid
+
+                return temp == 1;
+            }
+            catch (Exception ex)
+            {
+                Log.LogError("ERROR: " + ex.ToString());
+                throw new Exception("Se produjo un erro en la consulta existe" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
             }
         }
     }

@@ -6,10 +6,21 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "Pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RecordsPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[GestorGastos.API.DTO.TipoCuentaDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "GestorGastos.API.Utilidades.PagedResponse\u00601[[GestorGastos.API.DTO.TipoCuentaDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -33,17 +44,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "GestorGastos.API.Entidades.TipoCuenta",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
@@ -55,21 +56,11 @@
     "Parameters": [
       {
         "Name": "t",
-        "Type": "GestorGastos.API.Entidades.TipoCuenta",
+        "Type": "GestorGastos.API.DTO.TipoCuentaCreacionDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "GestorGastos.API.Entidades.TipoCuenta",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
