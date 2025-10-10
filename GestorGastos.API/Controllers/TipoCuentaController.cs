@@ -76,32 +76,34 @@ namespace GestorGastos.API.Controllers
                 return new ObjectResult(vpd) { StatusCode = StatusCodes.Status409Conflict };
             }
 
+            /*temporal*/
+            t.UsuarioId = 1;
+            t.Orden = 1;
             var tipoCuenta = mapper.Map<TipoCuenta>(t);
             await servicioTipoCuenta.NewTipoCuenta(tipoCuenta);
             return CreatedAtRoute("ObtenerTipoCuentaPorId", new { id = tipoCuenta.Id }, tipoCuenta);
         }
 
-        [HttpPut]
-        public async Task<ActionResult> put([FromBody] TipoCuentaCreacionDTO t)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> put(int id, [FromBody] TipoCuentaCreacionDTO t)
         {
-            var tipocuenta =  await servicioTipoCuenta.getTipoCuentaById(t.Id);
+            var tipocuenta =  await servicioTipoCuenta.getTipoCuentaById(id);
             if (tipocuenta is null) return NotFound();
 
             tipocuenta.Nombre = t.Nombre;
-            tipocuenta.Orden = t.Orden;
 
             await servicioTipoCuenta.SetTipoCuenta(tipocuenta);
-            return CreatedAtRoute("ObtenerTipoCuentaPorId", new { id = tipocuenta.Id}, tipocuenta);
+            return NoContent();
         }
 
-        [HttpDelete]
-        public async Task<ActionResult> delete(int id)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> delete(int id)
         {
             var tipoAux = await servicioTipoCuenta.getTipoCuentaById(id);
             if (tipoAux is null) return NotFound();
 
             await servicioTipoCuenta.DeleteTipoCuenta(tipoAux.Id);
-            return Ok();
+            return NoContent();
         }
 
     }

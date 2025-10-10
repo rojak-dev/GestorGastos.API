@@ -2348,11 +2348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\GestorGastos.API.csproj",
+      "projectUniqueName": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\GestorGastos.API.csproj",
       "projectName": "GestorGastos.API",
-      "projectPath": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\GestorGastos.API.csproj",
+      "projectPath": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\GestorGastos.API.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\GestorGastos.API\\GestorGastos.API\\obj\\",
+      "outputPath": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

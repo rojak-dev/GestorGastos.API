@@ -48,38 +48,6 @@
   },
   {
     "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
-    "Method": "put",
-    "RelativePath": "api/tipoCuenta",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "t",
-        "Type": "GestorGastos.API.DTO.TipoCuentaCreacionDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
-    "Method": "delete",
-    "RelativePath": "api/tipoCuenta",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
     "Method": "Get",
     "RelativePath": "api/tipoCuenta/{id}",
     "HttpMethod": "GET",
@@ -104,5 +72,42 @@
       }
     ],
     "EndpointName": "ObtenerTipoCuentaPorId"
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
+    "Method": "put",
+    "RelativePath": "api/tipoCuenta/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "t",
+        "Type": "GestorGastos.API.DTO.TipoCuentaCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
+    "Method": "delete",
+    "RelativePath": "api/tipoCuenta/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

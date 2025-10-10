@@ -120,6 +120,7 @@ namespace GestorGastos.API.Servicios
 
                 //Se añaden los parametros
                 var param = new DynamicParameters();
+                param.Add("@Id", t.Id, DbType.Int32, ParameterDirection.Input);
                 param.Add("@Nombre", t.Nombre, DbType.String, ParameterDirection.Input, 50);
                 param.Add("@Orden", t.Orden, DbType.Int32, ParameterDirection.Input);
 
