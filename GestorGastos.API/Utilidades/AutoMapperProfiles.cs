@@ -22,6 +22,11 @@ namespace GestorGastos.API.Utilidades
             CreateMap<CuentaCreacionDTO, Cuenta>();
             //de Cuenta -> CuentaDTO
             CreateMap<Cuenta, CuentaDTO>();
+
+            //de CategoriaCreacionDTO -> Categoria
+            CreateMap<CategoriaCreacionDTO, Categoria>();
+            //de Categoria a CategoriaDTO
+            CreateMap<Categoria, CategoriaDTO>();
         }
     }
 }
