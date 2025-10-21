@@ -50,7 +50,7 @@ namespace GestorGastos.API.Servicios
             }
         }
 
-        public async Task<PagedResponse<TipoCuenta>> getAllTiposCuentas(PaginacionDTO paginacion)
+        public async Task<PagedResponse<TipoCuenta>> getAllTiposCuentasPaginado(PaginacionDTO paginacion)
         {
             SqlConnection sqlConection = conexion();
             try
@@ -72,7 +72,27 @@ namespace GestorGastos.API.Servicios
             catch (Exception ex)
             {
                 Log.LogError("ERROR: "+ex.ToString());
-                throw new Exception("Se produjo un erro al consultar los tipos cuentas" + ex.Message);
+                throw new Exception("Se produjo un error al consultar los tipos cuentas" + ex.Message);
+            }
+            finally
+            {
+                sqlConection.Close();
+                sqlConection.Dispose();
+            }
+        }
+
+        public async Task<IEnumerable<TipoCuenta>> getAll() {
+            SqlConnection sqlConection = conexion();
+            try
+            {
+                sqlConection.Open();
+                 var listado = await sqlConection.QueryAsync<TipoCuenta>("TipoCuentaObtenerAll", commandType: CommandType.StoredProcedure);
+                return listado;
+            }
+            catch (Exception ex)
+            {
+                Log.LogError("ERROR: " + ex.ToString());
+                throw new Exception("Se produjo un error al consultar los tipos cuentas" + ex.Message);
             }
             finally
             {

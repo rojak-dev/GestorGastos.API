@@ -6,7 +6,8 @@ namespace GestorGastos.API.Servicios
 {
     public interface IServicioTipoCuenta
     {
-        public Task<PagedResponse<TipoCuenta>> getAllTiposCuentas(PaginacionDTO paginacion);
+        public Task<PagedResponse<TipoCuenta>> getAllTiposCuentasPaginado(PaginacionDTO paginacion);
+        public Task<IEnumerable<TipoCuenta>> getAll();
         public Task<TipoCuenta> getTipoCuentaById(int id);
         public Task NewTipoCuenta(TipoCuenta t);
         public Task SetTipoCuenta(TipoCuenta t);

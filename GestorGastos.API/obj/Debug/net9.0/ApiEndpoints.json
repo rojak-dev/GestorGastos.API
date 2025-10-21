@@ -1,5 +1,136 @@
 [
   {
+    "ContainingType": "GestorGastos.API.Controllers.CuentaController",
+    "Method": "Get",
+    "RelativePath": "api/Cuenta",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RecordsPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestorGastos.API.Utilidades.PagedResponse\u00601[[GestorGastos.API.DTO.CuentaDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.CuentaController",
+    "Method": "post",
+    "RelativePath": "api/Cuenta",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ct",
+        "Type": "GestorGastos.API.DTO.CuentaCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.CuentaController",
+    "Method": "Get",
+    "RelativePath": "api/Cuenta/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestorGastos.API.DTO.CuentaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObtenerCuentaPorId"
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.CuentaController",
+    "Method": "put",
+    "RelativePath": "api/Cuenta/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "GestorGastos.API.DTO.CuentaCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.CuentaController",
+    "Method": "delete",
+    "RelativePath": "api/Cuenta/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.CuentaController",
+    "Method": "Get",
+    "RelativePath": "api/Cuenta/getAllCuentas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[GestorGastos.API.DTO.CuentaDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
     "Method": "Get",
     "RelativePath": "api/tipoCuenta",
@@ -109,5 +240,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TipoCuentaController",
+    "Method": "Get",
+    "RelativePath": "api/tipoCuenta/getAllTiposCuentas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[GestorGastos.API.DTO.TipoCuentaDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

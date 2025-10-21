@@ -26,17 +26,25 @@ namespace GestorGastos.API.Controllers
         [HttpGet]
         public async Task<ActionResult<PagedResponse<TipoCuentaDTO>>> Get([FromQuery] PaginacionDTO paginacion)
         {
-            var resultado = await servicioTipoCuenta.getAllTiposCuentas(paginacion);
+            var resultado = await servicioTipoCuenta.getAllTiposCuentasPaginado(paginacion);
             var dtoItems = mapper.Map<List<TipoCuentaDTO>>(resultado.Items);
 
             var response = new PagedResponse<TipoCuentaDTO>(resultado.Total, dtoItems);
 
             await HttpContext.InsertarParametrosPaginacionEnCabecera(resultado.Total, paginacion.Pagina, paginacion.recordsporpagina);
 
-            var tipoCuentaDTO = mapper.Map<List<TipoCuentaDTO>>(resultado.Items);
+            //var tipoCuentaDTO = mapper.Map<List<TipoCuentaDTO>>(resultado.Items);
 
             
             return Ok(response);
+        }
+
+        [HttpGet("getAllTiposCuentas")]
+        public async Task<ActionResult<List<TipoCuentaDTO>>> Get()
+        {
+            var tipoCeunta = (await servicioTipoCuenta.getAll());
+            var dtos = mapper.Map<List<TipoCuentaDTO>>(tipoCeunta);
+            return Ok(dtos);
         }
 
         [HttpGet("{id}", Name = "ObtenerTipoCuentaPorId")]
@@ -88,7 +96,7 @@ namespace GestorGastos.API.Controllers
         public async Task<IActionResult> put(int id, [FromBody] TipoCuentaCreacionDTO t)
         {
             var tipocuenta =  await servicioTipoCuenta.getTipoCuentaById(id);
-            if (tipocuenta is null) return NotFound();
+            if (tipocuenta is null) return NotFound("El tipo de cuenta que desea modificar no existe");
 
             tipocuenta.Nombre = t.Nombre;
 
