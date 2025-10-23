@@ -24,6 +24,7 @@ builder.Services.AddAutoMapper(cfg => { }, typeof(Program).Assembly); //servicio
 builder.Services.AddSingleton<IServicioTipoCuenta, ServicioTipoCuenta>(); //servicio TipoCuenta
 builder.Services.AddSingleton<IServicioCuenta, ServicioCuenta>();
 builder.Services.AddSingleton<IServicioCategoria, ServicioCategoria>();
+builder.Services.AddSingleton<IServicioTipoOperacion, ServicioTipoOperacion>();
 
 builder.Host.ConfigureLogging((hostingContext, logging) =>  //Servicio de Log
 {

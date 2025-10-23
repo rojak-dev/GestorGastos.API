@@ -108,7 +108,7 @@ namespace GestorGastos.API.Controllers
         public async Task<IActionResult> delete(int id)
         {
             var tipoAux = await servicioTipoCuenta.getTipoCuentaById(id);
-            if (tipoAux is null) return NotFound();
+            if (tipoAux is null) return NotFound("El tipo cuenta que desea eliminar no existe");
 
             await servicioTipoCuenta.DeleteTipoCuenta(tipoAux.Id);
             return NoContent();
