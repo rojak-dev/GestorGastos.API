@@ -170,6 +170,7 @@ namespace GestorGastos.API.Servicios
                 con.Open();
 
                 var param = new DynamicParameters();
+                param.Add("@Id", t.Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
                 param.Add("@Nombre", t.Nombre, System.Data.DbType.String, System.Data.ParameterDirection.Input);
                 param.Add("@TipoCuentaId", t.TipoCuentaId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
                 param.Add("@Balance", t.Balance, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);

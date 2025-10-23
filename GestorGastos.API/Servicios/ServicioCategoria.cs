@@ -127,14 +127,59 @@ namespace GestorGastos.API.Servicios
             return c;
         }
 
-        public Task NewCategoria(Categoria c)
+        public async Task NewCategoria(Categoria c)
         {
-            throw new NotImplementedException();
+            SqlConnection cnn = conexion();
+
+            try
+            {
+                cnn.Open();
+
+                var param = new DynamicParameters();
+                param.Add("@Nombre", c.Nombre, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+                param.Add("@TipoOperacionId", c.TipoOperacionId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+                param.Add("@UsuarioId", c.UsuarioId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+                await cnn.ExecuteScalarAsync("CategoriaAlta", param, commandType: System.Data.CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError("ERROR: " + ex.ToString());
+                throw new Exception("Se produjo un error al agregar una caterogira " + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+                cnn.Dispose();
+            }
         }
 
-        public Task SetCategoria(Categoria c)
+        public async Task SetCategoria(Categoria c)
         {
-            throw new NotImplementedException();
+            SqlConnection cnn = conexion();
+
+            try
+            {
+                cnn.Open();
+
+                var param = new DynamicParameters();
+                param.Add("@Id", c.Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+                param.Add("@Nombre", c.Nombre, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+                param.Add("@TipoOperacionId", c.TipoOperacionId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+                param.Add("@UsuarioId", c.UsuarioId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+                await cnn.ExecuteScalarAsync("CategoriaAlta", param, commandType: System.Data.CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError("ERROR: " + ex.ToString());
+                throw new Exception("Se produjo un error al etidar la caterogira " + ex.Message);
+            }
+            finally
+            {
+                cnn.Close();
+                cnn.Dispose();
+            }
         }
     }
 }

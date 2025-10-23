@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Code\\GestorGastos\\GestorGastos.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos\\gestorgastos.api\\gestorgastos.api\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos\\gestorgastos.api\\gestorgastos.api\\servicios\\serviciocategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\servicios\\serviciocategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos\\gestorgastos.api\\gestorgastos.api\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos\\gestorgastos.api\\gestorgastos.api\\utilidades\\httpcontextextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\utilidades\\httpcontextextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,53 +30,76 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ServicioCategoria.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Servicios\\ServicioCategoria.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Servicios\\ServicioCategoria.cs",
               "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Servicios\\ServicioCategoria.cs",
               "RelativeToolTip": "GestorGastos.API\\Servicios\\ServicioCategoria.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAQwIMAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T20:53:36.915Z",
+              "WhenOpened": "2025-10-23T17:17:05.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TipoCuentaController.cs",
-              "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "RelativeToolTip": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAABxAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CategoriaController.cs",
+              "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\CategoriaController.cs",
+              "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\CategoriaController.cs",
+              "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\CategoriaController.cs",
+              "RelativeToolTip": "GestorGastos.API\\Controllers\\CategoriaController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAwwFcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T23:51:06.236Z",
+              "WhenOpened": "2025-10-23T16:56:24.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CuentaController.cs",
               "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\CuentaController.cs",
               "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\CuentaController.cs",
               "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\CuentaController.cs",
               "RelativeToolTip": "GestorGastos.API\\Controllers\\CuentaController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCYAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAA0wFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T23:13:36.161Z"
-            },
+              "WhenOpened": "2025-10-20T23:13:36.161Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "5c424d44-aeed-4852-b0e8-c331a683c97b",
+        "Display": 1,
+        "X": 111,
+        "Y": 107,
+        "Width": 1494,
+        "Height": 681,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HttpContextExtensions.cs",
-              "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Utilidades\\HttpContextExtensions.cs",
-              "RelativeDocumentMoniker": "GestorGastos.API\\Utilidades\\HttpContextExtensions.cs",
-              "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Utilidades\\HttpContextExtensions.cs",
-              "RelativeToolTip": "GestorGastos.API\\Utilidades\\HttpContextExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TipoCuentaController.cs",
+              "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
+              "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
+              "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoCuentaController.cs",
+              "RelativeToolTip": "GestorGastos.API\\Controllers\\TipoCuentaController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAADwvxQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T20:30:47.965Z"
+              "WhenOpened": "2025-10-20T23:51:06.236Z",
+              "EditorCaption": ""
             }
           ]
         }
