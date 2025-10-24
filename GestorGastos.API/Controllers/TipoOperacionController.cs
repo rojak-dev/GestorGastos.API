@@ -34,7 +34,7 @@ namespace GestorGastos.API.Controllers
             return Ok(response);
         }
 
-        [HttpGet("getAllTiposOperacioines")]
+        [HttpGet("getAllTiposOperaciones")]
         public async Task<ActionResult<List<TipoOperacionDTO>>> Get()
         {
             var to = await _servicioTipoOperacion.getAll();

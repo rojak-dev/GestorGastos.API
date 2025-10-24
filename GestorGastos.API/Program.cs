@@ -25,6 +25,7 @@ builder.Services.AddSingleton<IServicioTipoCuenta, ServicioTipoCuenta>(); //serv
 builder.Services.AddSingleton<IServicioCuenta, ServicioCuenta>();
 builder.Services.AddSingleton<IServicioCategoria, ServicioCategoria>();
 builder.Services.AddSingleton<IServicioTipoOperacion, ServicioTipoOperacion>();
+builder.Services.AddSingleton<IServicioTransaccion, ServicioTransaccion>();
 
 builder.Host.ConfigureLogging((hostingContext, logging) =>  //Servicio de Log
 {

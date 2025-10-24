@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Code\\GestorGastos\\GestorGastos.API\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|c:\\code\\gestorgastos\\gestorgastos.api\\gestorgastos.api\\controllers\\tipooperacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8A7B321-4A51-42D4-A10D-1858D606306A}|GestorGastos.API\\GestorGastos.API.csproj|solutionrelative:gestorgastos.api\\controllers\\tipooperacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,22 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TipoOperacionController.cs",
-              "DocumentMoniker": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoOperacionController.cs",
-              "RelativeDocumentMoniker": "GestorGastos.API\\Controllers\\TipoOperacionController.cs",
-              "ToolTip": "C:\\Code\\GestorGastos\\GestorGastos.API\\GestorGastos.API\\Controllers\\TipoOperacionController.cs",
-              "RelativeToolTip": "GestorGastos.API\\Controllers\\TipoOperacionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T19:46:54.584Z",
-              "EditorCaption": ""
-            }
-          ]
+          "SelectedChildIndex": -1,
+          "Children": []
         }
       ]
     }

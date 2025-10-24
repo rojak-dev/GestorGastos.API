@@ -496,7 +496,7 @@
   {
     "ContainingType": "GestorGastos.API.Controllers.TipoOperacionController",
     "Method": "Get",
-    "RelativePath": "api/TipoOperacion/getAllTiposOperacioines",
+    "RelativePath": "api/TipoOperacion/getAllTiposOperaciones",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -504,6 +504,132 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[GestorGastos.API.DTO.TipoOperacionDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TransaccionController",
+    "Method": "Get",
+    "RelativePath": "api/Transaccion",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paginacion",
+        "Type": "GestorGastos.API.DTO.PaginacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestorGastos.API.Utilidades.PagedResponse\u00601[[GestorGastos.API.DTO.TransaccionDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TransaccionController",
+    "Method": "Post",
+    "RelativePath": "api/Transaccion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "t",
+        "Type": "GestorGastos.API.DTO.TransaccionCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TransaccionController",
+    "Method": "Get",
+    "RelativePath": "api/Transaccion/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestorGastos.API.DTO.TransaccionDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObtenerTransaccionPorId"
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TransaccionController",
+    "Method": "Put",
+    "RelativePath": "api/Transaccion/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "GestorGastos.API.DTO.TransaccionCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TransaccionController",
+    "Method": "Delete",
+    "RelativePath": "api/Transaccion/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorGastos.API.Controllers.TransaccionController",
+    "Method": "Get",
+    "RelativePath": "api/Transaccion/getAllTransacciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[GestorGastos.API.DTO.TransaccionDTO, GestorGastos.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

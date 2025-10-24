@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestorGastos.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bac475b2894f907cc42036422392ada61be2a505")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea791000039a8161b2c369e4c7b84cd0ec0f9055")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestorGastos.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestorGastos.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
